@@ -30,16 +30,4 @@ This repository documents my **daily learning progress**, **problem-solving prac
 
 ---
 
-### ⚙️ Notes:
-- The **Learning Path** and **Goals** sections are now visually separated and clearly highlight your roadmap.  
-- The format matches GitHub Markdown styling perfectly — clean bullet icons, spacing, and bold emphasis.
-- This integrates seamlessly with the auto-update Action I gave earlier.
 
----
-
-Would you like me to now **embed a dynamic “Days Completed” badge counter** (that automatically updates based on how many days you’ve committed)?  
-It would look like this at the top:  
-
-> ![Days Completed](https://img.shields.io/badge/Days%20Completed-12-brightgreen?style=for-the-badge&logo=python)
-
-I can make it auto-update via GitHub Actions too.
