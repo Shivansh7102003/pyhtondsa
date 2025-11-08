@@ -3,10 +3,10 @@
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
 ![Progress](https://img.shields.io/badge/Progress-Daily-green)
 ![Focus](https://img.shields.io/badge/Focus-DSA%20%26%20Problem%20Solving-orange)
-![Days Completed](https://img.shields.io/badge/Days%20Completed-1-brightgreen?style=flat-square)
+![Days Completed](https://img.shields.io/badge/Days%20Completed-0-brightgreen?style=for-the-badge)
 
 Welcome to my **Data Structures and Algorithms (DSA)** journey — powered by **Python 🐍**!  
-This repository is where I document my **daily progress**, solve challenging problems, and build a solid foundation for **technical interviews and competitive programming**.  
+This repository documents my **daily learning progress**, **problem-solving practice**, and journey toward mastering DSA for **interviews and beyond**.  
 
 ---
 
@@ -25,12 +25,10 @@ This repository is where I document my **daily progress**, solve challenging pro
 - 📘 **Daily DSA Practice** — from fundamentals to advanced topics  
 - 🧮 **Topic-Wise Implementation** — Arrays, Linked Lists, Trees, Graphs, and more  
 - 🧠 **Algorithmic Patterns** — Sliding Window, Recursion, DP, Backtracking  
-- ✍️ **Explanations & Notes** — Markdown summaries for every topic.
+- ✍️ **Explanations & Notes** — Markdown summaries for every topic  
 - 💡 **Progress Tracker** — Auto-updates whenever I push new work  
 
 ---
-
-
 
 ### ⚙️ Notes:
 - The **Learning Path** and **Goals** sections are now visually separated and clearly highlight your roadmap.  
