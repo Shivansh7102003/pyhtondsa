@@ -1,0 +1,34 @@
+name: 🔢 Update Days Completed Badge
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: "0 12 * * *"  # Runs daily at 12:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update-days:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛠️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: 🧮 Count unique commit days
+        id: count
+        run: |
+          days=$(git log --date=short --pretty=format:"%ad" | sort | uniq | wc -l)
+          echo "days=$days" >> $GITHUB_OUTPUT
+
+      - name: ✍️ Update README badge
+        run: |
+          DAYS=${{ steps.count.outputs.days }}
+          sed -i "s|Days%20Completed-[0-9]*|Days%20Completed-$DAYS|g" README.md
+
+      - name: 🚀 Commit and push
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "🔢 Updated Days Completed badge: ${{ steps.count.outputs.days }}" || echo "No changes"
+          git push
