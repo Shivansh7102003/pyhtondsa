@@ -1,0 +1,40 @@
+name: 📅 Update Daily Progress
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 12 * * *'  # Runs daily at 12:00 UTC (~5:30 PM IST)
+  workflow_dispatch:
+
+jobs:
+  update-progress:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛠️ Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 📅 Get today's date
+        id: date
+        run: echo "date=$(date '+%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: 🧠 Get latest commit message
+        id: commit
+        run: echo "msg=$(git log -1 --pretty=%s)" >> $GITHUB_OUTPUT
+
+      - name: ✍️ Update README.md
+        run: |
+          DATE=${{ steps.date.outputs.date }}
+          MESSAGE=${{ steps.commit.outputs.msg }}
+          ROW="| $DATE | — | $MESSAGE | ✅ |"
+          awk -v r="$ROW" '/\| 🗓️ \*/{print; print r; next}1' README.md > tmp && mv tmp README.md
+
+      - name: 🚀 Commit changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "actions@github.com"
+          git add README.md
+          git commit -m "📅 Auto-update progress log for ${{ steps.date.outputs.date }}" || echo "No changes"
+          git push
