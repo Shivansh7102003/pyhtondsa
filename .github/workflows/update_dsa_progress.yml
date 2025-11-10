@@ -38,7 +38,7 @@ jobs:
           
           # Add new progress entry
           ROW="| $DATE | — | $MESSAGE | ✅ |"
-          awk -v r="$ROW" '/\| 🗓️ \*/{print; print r; next}1' README.md > tmp && mv tmp README.md
+          awk -v r="$ROW" '/\| 🗓️ Date \|/{print; print r; next}1' README.md > tmp && mv tmp README.md
           
           # Update Days Completed badge
           sed -i "s|Days%20Completed-[0-9]*|Days%20Completed-$DAYS|g" README.md
