@@ -12,7 +12,6 @@ This repository documents my **daily learning progress**, **problem-solving prac
 
 ## 📅 Daily Progress Tracker  
 
-|------|----------------|-------------------------|---------|
 | 2025-11-19 | — | fix(frequency_map): correct hashmap implementation and update comments | ✅ |
 | 🗓️ *Auto-updated daily!* | | | |
 
@@ -29,5 +28,6 @@ This repository documents my **daily learning progress**, **problem-solving prac
 - 💡 **Progress Tracker** — Auto-updates whenever I push new work  
 
 ---
+
 
 
