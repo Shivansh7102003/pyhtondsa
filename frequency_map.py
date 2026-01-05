@@ -18,4 +18,4 @@ hash_maps  = {}
 for i in range(0,len(num)):
     hash_maps[num[i]]= hash_maps.get(num[0] , 0) +1
     
-print(hash_maps)
+print(hash_maps) 
