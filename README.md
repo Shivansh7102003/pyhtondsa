@@ -3,7 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10-blue?logo=python)
 ![Progress](https://img.shields.io/badge/Progress-Daily-green)
 ![Focus](https://img.shields.io/badge/Focus-DSA%20%26%20Problem%20Solving-orange)
-![Days Completed](https://img.shields.io/badge/Days%20Completed-4-brightgreen?style=for-the-badge)
+![Days Completed](https://img.shields.io/badge/Days%20Completed-5-brightgreen?style=for-the-badge)
 
 Welcome to my **Data Structures and Algorithms (DSA)** journey — powered by **Python 🐍**!  
 This repository documents my **daily learning progress**, **problem-solving practice**, and journey toward mastering DSA for **interviews and beyond**.  
