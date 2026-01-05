@@ -11,11 +11,11 @@ for i in range(0 , len(num)):
 print(frequency_map)
 
 
-# method 2 using hasmaps 
+# method 2 using hashmaps 
 
 hash_maps  = {}
 
 for i in range(0,len(num)):
-    hash_maps[num[i]]= hash_maps.get(num[0] , 0) +1
+    hash_maps[num[i]]= hash_maps.get(num[i] , 0) +1
     
 print(hash_maps) 

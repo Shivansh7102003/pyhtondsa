@@ -8,13 +8,22 @@ on:
     - cron: '0 12 * * *'  # Runs daily at 12:00 UTC (~5:30 PM IST)
   workflow_dispatch:
 
+concurrency:
+  group: update-dsa-progress
+  cancel-in-progress: false
+
 jobs:
   update-dsa:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push changes back to repository
 
     steps:
       - name: 🛠️ Checkout repository
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0  # Fetch full history for accurate git log
 
       - name: 📅 Get today's date
         id: date
@@ -32,13 +41,13 @@ jobs:
 
       - name: ✍️ Update README (Progress Table + Days Badge)
         run: |
-          DATE=${{ steps.date.outputs.date }}
-          MESSAGE=${{ steps.commit.outputs.msg }}
-          DAYS=${{ steps.count.outputs.days }}
+          DATE="${{ steps.date.outputs.date }}"
+          MESSAGE="${{ steps.commit.outputs.msg }}"
+          DAYS="${{ steps.count.outputs.days }}"
           
           # Add new progress entry
           ROW="| $DATE | — | $MESSAGE | ✅ |"
-          awk -v r="$ROW" '/\| 🗓️ Date \|/{print; print r; next}1' README.md > tmp && mv tmp README.md
+          awk -v r="$ROW" '/\| Date \| Topic/{getline; print; print r; next}1' README.md > tmp && mv tmp README.md
           
           # Update Days Completed badge
           sed -i "s|Days%20Completed-[0-9]*|Days%20Completed-$DAYS|g" README.md
