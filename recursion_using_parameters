@@ -1,0 +1,33 @@
+def func(x , n):
+    if n ==0 :
+        return
+    else:
+        print(x)
+        func(x , n-1)
+    
+    
+    
+func(15 , 4)
+
+
+
+
+
+# print 1 to n using recursion
+
+
+def func1(i,n):
+    if i>n:
+        return
+    else:
+        print(i)
+        func1(i+1 , n)
+        
+        
+func1(1,4)
+
+
+# if you use this using tail recursion it will return the number in reverse order which mean the counting will be from n to !
+
+
+
